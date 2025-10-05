@@ -10,7 +10,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#0f1214; --text:#d0cec6; --muted:#b9b6a8; --line:#3a3e41;
+      --bg:#0d1012;
+  --text:#d0cec6; --muted:#b9b6a8; --line:#3a3e41;
     }
     *{box-sizing:border-box}
     html,body{height:100%}
@@ -32,17 +33,14 @@
       isolation:isolate;
       overflow:hidden;
     }
-    .hero::before{
+   .hero::before{
   content:"";
   position:absolute; inset:0;
-  /* 3 layers: vignette, gradient, IMAGE */
   background-image:
     radial-gradient(1200px 800px at 15% 0%, rgba(0,0,0,.35), rgba(0,0,0,.65)),
     linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,.75) 100%),
-    url("assets/dag-matte.png");
-  /* cover overlays, but make the IMAGE smaller (70% of viewport) */
-  background-size: cover, cover, 70%;
-  /* keep overlays centered; nudge image slightly right if you like */
+    url("assets/dag-matte.png");   /* use your local asset path */
+  background-size: cover, cover, 60%;         /* <-- smaller image */
   background-position: center, center, 60% center;
   background-repeat: no-repeat, no-repeat, no-repeat;
   filter: contrast(96%) saturate(90%) brightness(92%);
@@ -52,19 +50,21 @@
 /* Optional: on small screens, let the image be a bit larger for legibility */
 @media (max-width: 640px){
   .hero::before{
-    background-size: cover, cover, 95%;
+    background-size: cover, cover, 90%;
     background-position: center, center, center;
   }
 }
 
     .hero::after{
-      content:"";
-      position:absolute; inset:0;
-      background:repeating-linear-gradient(0deg, rgba(255,255,255,.02) 0 1px, transparent 1px 2px);
-      mix-blend-mode:overlay;
-      opacity:.25;
-      z-index:-1;
-    }
+  content:"";
+  position:absolute; inset:0;
+  background:
+    radial-gradient(80% 80% at 60% 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,.25) 75%, rgba(0,0,0,.55) 100%),
+    repeating-linear-gradient(0deg, rgba(255,255,255,.02) 0 1px, transparent 1px 2px);
+  mix-blend-mode:overlay;
+  opacity:.3;
+  z-index:-1;
+}
 
     .hero-content{
       padding:clamp(20px,6vw,48px);
