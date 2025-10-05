@@ -10,26 +10,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      /* Matte palette from your image */
-      --bg:#0f1214;
-      --text:#d0cec6;
-      --muted:#b9b6a8;
-      --line:#3a3e41;
-      --radius:16px;
-      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --bg:#0f1214; --text:#d0cec6; --muted:#b9b6a8; --line:#3a3e41;
     }
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
       margin:0;
-      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
       color:var(--text);
       background:var(--bg);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
     }
 
-    /* Hero with background image */
+    /* HERO with background image */
     .hero{
       position:relative;
       min-height:100dvh;
@@ -39,7 +32,6 @@
       isolation:isolate;
       overflow:hidden;
     }
-    /* Background image + vignette/overlay */
     .hero::before{
       content:"";
       position:absolute; inset:0;
@@ -53,48 +45,43 @@
       z-index:-2;
     }
     .hero::after{
-      /* subtle noise/grain for a matte feel */
       content:"";
       position:absolute; inset:0;
-      background: repeating-linear-gradient(0deg, rgba(255,255,255,.02) 0 1px, transparent 1px 2px);
+      background:repeating-linear-gradient(0deg, rgba(255,255,255,.02) 0 1px, transparent 1px 2px);
       mix-blend-mode:overlay;
       opacity:.25;
       z-index:-1;
     }
 
     .hero-content{
-      padding: clamp(20px, 6vw, 48px);
-      text-shadow: 0 2px 16px rgba(0,0,0,.5);
-      max-width: 1100px;
+      padding:clamp(20px,6vw,48px);
+      text-shadow:0 2px 16px rgba(0,0,0,.5);
+      max-width:1100px;
     }
-
     .brand{
       margin:0 0 10px;
       font-weight:800;
       letter-spacing:.4px;
-      /* Big on desktop, still big on mobile */
-      font-size: clamp(42px, 9vw, 96px);
-      line-height: 1.02;
+      font-size:clamp(42px,9vw,96px); /* big */
+      line-height:1.02;
     }
-
     .tagline{
-      margin: 8px 0 0;
-      color: var(--muted);
-      font-weight: 500;
-      /* Small as requested */
-      font-size: clamp(13px, 1.8vw, 18px);
+      margin:8px 0 0;
+      color:var(--muted);
+      font-weight:500;
+      font-size:clamp(13px,1.8vw,18px); /* small */
       letter-spacing:.2px;
     }
 
     footer{
       position:relative;
-      margin-top:-56px; /* pulls footer slightly into hero for a tight look */
-      padding: 28px 16px 24px;
+      margin-top:-56px;
+      padding:28px 16px 24px;
       text-align:center;
       color:#8c8a80;
       border-top:1px solid var(--line);
-      background: linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.6));
-      backdrop-filter: blur(2px);
+      background:linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.6));
+      backdrop-filter:blur(2px);
     }
     a{color:#b9b6a8; text-decoration:none}
     a:hover{color:#d8d6cc; text-decoration:underline}
