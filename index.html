@@ -1,11 +1,61 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>DoubleRobust</title>
-  </head>
-  <body>
-    <h1>Welcome to DoubleRobust</h1>
-    <p>This site is under construction. Contact: info@doublerobust.com</p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Double Robust Ltd</title>
+  <meta name="description" content="Weekly-updated data feed and causal inference solutions by Double Robust Ltd." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>∂</text></svg>">
+  <style>
+    :root { --bg:#0f172a; --card:#111827; --text:#e5e7eb; --muted:#9ca3af; --accent:#60a5fa; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"; background:linear-gradient(180deg,#0f172a,#111827); color:var(--text); }
+    .wrap { max-width: 880px; margin: 0 auto; padding: 56px 20px 80px; }
+    header { text-align:center; padding: 16px 0 8px; }
+    h1 { margin:0 0 8px; font-size: clamp(28px, 5vw, 44px); letter-spacing:.3px; }
+    p.lead { margin:0 auto 24px; max-width: 720px; color: var(--muted); font-size: clamp(15px, 2.4vw, 18px); line-height:1.6; }
+    .card { background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.06); border-radius:16px; padding:24px; box-shadow: 0 10px 30px rgba(0,0,0,.25); }
+    .grid { display:grid; gap:18px; grid-template-columns: 1fr; }
+    .section-title { font-size: 18px; margin: 0 0 8px; color:#cbd5e1; }
+    .cta { display:inline-block; margin-top:16px; padding:12px 18px; border-radius:12px; border:1px solid rgba(255,255,255,.12); color:var(--text); text-decoration:none; transition:.2s; }
+    .cta:hover { border-color: var(--accent); color: white; box-shadow: 0 6px 20px rgba(96,165,250,.25); }
+    .img-wrap { margin-top:16px; background:#0b1220; border:1px solid rgba(255,255,255,.06); border-radius:12px; overflow:hidden; }
+    .img-wrap img { width:100%; height:auto; display:block; }
+    footer { margin-top:28px; text-align:center; color:var(--muted); font-size:14px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Double Robust Ltd</h1>
+      <p class="lead">Weekly-updated data feeds and causal inference solutions for financial services.</p>
+    </header>
+
+    <div class="card">
+      <div class="grid">
+        <div>
+          <h2 class="section-title">Our first product</h2>
+          <p>We deliver a <strong>weekly data feed</strong> designed for rapid evaluation and integration. If you’d like sample rows, documentation, or a quick call, get in touch below.</p>
+          <a class="cta" href="mailto:Yehuda.Dayan@DoubleRobust.com">Contact: Yehuda.Dayan@DoubleRobust.com</a>
+        </div>
+        <div>
+          <h2 class="section-title">Causal graph (example)</h2>
+          <p>A causal graph visualizes directional relationships that drive outcomes. We use these ideas to design robust signals.</p>
+          <div class="img-wrap">
+            <img alt="Causal graph example"
+                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Causal_graph_example.svg/800px-Causal_graph_example.svg.png" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      © <span id="y"></span> Double Robust Ltd · <a href="mailto:Yehuda.Dayan@DoubleRobust.com">Email us</a>
+    </footer>
+  </div>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
 </html>
