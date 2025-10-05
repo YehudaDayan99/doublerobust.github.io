@@ -33,17 +33,30 @@
       overflow:hidden;
     }
     .hero::before{
-      content:"";
-      position:absolute; inset:0;
-      background:
-        radial-gradient(1200px 800px at 15% 0%, rgba(0,0,0,.35), rgba(0,0,0,.65)),
-        linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,.75) 100%),
-        url("assets/dag-matte.png");
-      background-size:cover;
-      background-position:center right;
-      filter:contrast(96%) saturate(90%) brightness(92%);
-      z-index:-2;
-    }
+  content:"";
+  position:absolute; inset:0;
+  /* 3 layers: vignette, gradient, IMAGE */
+  background-image:
+    radial-gradient(1200px 800px at 15% 0%, rgba(0,0,0,.35), rgba(0,0,0,.65)),
+    linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,.75) 100%),
+    url("assets/dag-matte.png");
+  /* cover overlays, but make the IMAGE smaller (70% of viewport) */
+  background-size: cover, cover, 70%;
+  /* keep overlays centered; nudge image slightly right if you like */
+  background-position: center, center, 60% center;
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  filter: contrast(96%) saturate(90%) brightness(92%);
+  z-index:-2;
+}
+
+/* Optional: on small screens, let the image be a bit larger for legibility */
+@media (max-width: 640px){
+  .hero::before{
+    background-size: cover, cover, 95%;
+    background-position: center, center, center;
+  }
+}
+
     .hero::after{
       content:"";
       position:absolute; inset:0;
